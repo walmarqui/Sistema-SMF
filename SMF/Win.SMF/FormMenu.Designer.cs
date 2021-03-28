@@ -40,6 +40,7 @@
             this.Titulo = new System.Windows.Forms.Label();
             this.panelEscritorio = new System.Windows.Forms.Panel();
             this.Login = new System.Windows.Forms.Button();
+            this.CerrarCloseForm = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -173,12 +174,14 @@
             // panelBarraTitulo
             // 
             this.panelBarraTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelBarraTitulo.Controls.Add(this.CerrarCloseForm);
             this.panelBarraTitulo.Controls.Add(this.Titulo);
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(220, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
             this.panelBarraTitulo.Size = new System.Drawing.Size(459, 80);
             this.panelBarraTitulo.TabIndex = 1;
+            this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             // 
             // Titulo
             // 
@@ -219,6 +222,19 @@
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
+            // CerrarCloseForm
+            // 
+            this.CerrarCloseForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CerrarCloseForm.FlatAppearance.BorderSize = 0;
+            this.CerrarCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CerrarCloseForm.Image = global::Win.SMF.Properties.Resources.cross_out__2_;
+            this.CerrarCloseForm.Location = new System.Drawing.Point(0, 0);
+            this.CerrarCloseForm.Name = "CerrarCloseForm";
+            this.CerrarCloseForm.Size = new System.Drawing.Size(75, 80);
+            this.CerrarCloseForm.TabIndex = 1;
+            this.CerrarCloseForm.UseVisualStyleBackColor = true;
+            this.CerrarCloseForm.Click += new System.EventHandler(this.CerrarCloseForm_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,5 +271,6 @@
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.Panel panelEscritorio;
         private System.Windows.Forms.Button Login;
+        private System.Windows.Forms.Button CerrarCloseForm;
     }
 }

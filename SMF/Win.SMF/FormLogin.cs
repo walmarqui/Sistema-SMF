@@ -47,6 +47,8 @@ namespace Win.SMF
             if (usuario == "admin" && contrasena == "123")
             {
                 this.Close();
+                var formMenu = new FormMenu();
+                formMenu.ShowDialog();
             }
             else
             {

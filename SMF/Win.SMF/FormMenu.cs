@@ -18,6 +18,7 @@ namespace Win.SMF
         public FormMenu()
         {
             InitializeComponent();
+            CerrarCloseForm.Visible = false;
         }
 
         private void ActivateButton(object btnSender)
@@ -28,6 +29,7 @@ namespace Win.SMF
                 {
                     DisableButton();
                     currentButton = (Button)btnSender;
+                    CerrarCloseForm.Visible = true;
                 }
             }
         }
@@ -129,8 +131,29 @@ namespace Win.SMF
 
         private void Login_Click(object sender, EventArgs e)
         {
-            var formLogin = new FormLogin();
-            formLogin.ShowDialog();
+           var formLogin = new FormLogin();
+           formLogin.ShowDialog();
+        }
+
+        private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CerrarCloseForm_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+                Resetear();
+            }
+        }
+        private void Resetear()
+        {
+            DisableButton();
+            Titulo.Text = "HOME";
+            currentButton = null;
+            CerrarCloseForm.Visible = false;
         }
     }
 }
