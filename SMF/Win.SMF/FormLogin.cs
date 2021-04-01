@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.SMF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace Win.SMF
 {
     public partial class FormLogin : Form
     {
+        SeguridadBL _seguridad;
+
         public FormLogin()
         {
             InitializeComponent();
+
+            _seguridad = new SeguridadBL();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,11 +49,14 @@ namespace Win.SMF
 
             usuario = Usuario.Text;
             contrasena = Contraseña.Text;
-            if (usuario == "admin" && contrasena == "123")
+
+            var resultado = _seguridad.Autorizar(usuario, contrasena);
+
+            if (resultado == true)
             {
                 this.Close();
-                var formMenu = new FormMenu();
-                formMenu.ShowDialog();
+                //var formMenu = new FormMenu();
+                //formMenu.ShowDialog();
             }
             else
             {

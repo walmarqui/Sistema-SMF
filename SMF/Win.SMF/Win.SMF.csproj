@@ -146,6 +146,12 @@
   <ItemGroup>
     <None Include="Resources\cross-out %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL.SMF\BL.SMF.csproj">
+      <Project>{5a2a0d19-61e5-49b8-9528-cacef0cde53e}</Project>
+      <Name>BL.SMF</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

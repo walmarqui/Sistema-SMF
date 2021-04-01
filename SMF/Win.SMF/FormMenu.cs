@@ -47,7 +47,9 @@ namespace Win.SMF
         }
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
+            Ingresar();
+            //var formLogin = new FormLogin();
+            //formLogin.ShowDialog();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -131,8 +133,13 @@ namespace Win.SMF
 
         private void Login_Click(object sender, EventArgs e)
         {
-           var formLogin = new FormLogin();
-           formLogin.ShowDialog();
+            Ingresar();
+        }
+
+        private void Ingresar()
+        {
+            var formLogin = new FormLogin();
+            formLogin.ShowDialog();
         }
 
         private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)

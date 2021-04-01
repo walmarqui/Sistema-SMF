@@ -154,7 +154,7 @@
             this.Usuario.Multiline = true;
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(173, 20);
-            this.Usuario.TabIndex = 12;
+            this.Usuario.TabIndex = 1;
             this.Usuario.TextChanged += new System.EventHandler(this.Usuario_TextChanged);
             // 
             // FormLogin
@@ -163,6 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(292, 447);
+            this.ControlBox = false;
             this.Controls.Add(this.Usuario);
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Aceptar);
@@ -176,6 +177,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";

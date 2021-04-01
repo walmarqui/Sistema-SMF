@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.Login = new System.Windows.Forms.Button();
             this.Configuracion = new System.Windows.Forms.Button();
             this.Reportes = new System.Windows.Forms.Button();
             this.Facturacion = new System.Windows.Forms.Button();
@@ -37,10 +38,9 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBarraTitulo = new System.Windows.Forms.Panel();
+            this.CerrarCloseForm = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.panelEscritorio = new System.Windows.Forms.Panel();
-            this.Login = new System.Windows.Forms.Button();
-            this.CerrarCloseForm = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -62,6 +62,23 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 463);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Login
+            // 
+            this.Login.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Login.FlatAppearance.BorderSize = 0;
+            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Login.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Login.Location = new System.Drawing.Point(0, 280);
+            this.Login.Name = "Login";
+            this.Login.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.Login.Size = new System.Drawing.Size(220, 40);
+            this.Login.TabIndex = 6;
+            this.Login.Text = "Login";
+            this.Login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Configuracion
             // 
@@ -120,6 +137,7 @@
             this.Clientes.FlatAppearance.BorderSize = 0;
             this.Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Clientes.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Clientes.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Clientes.Location = new System.Drawing.Point(0, 120);
             this.Clientes.Name = "Clientes";
             this.Clientes.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -183,6 +201,19 @@
             this.panelBarraTitulo.TabIndex = 1;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             // 
+            // CerrarCloseForm
+            // 
+            this.CerrarCloseForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CerrarCloseForm.FlatAppearance.BorderSize = 0;
+            this.CerrarCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CerrarCloseForm.Image = global::Win.SMF.Properties.Resources.cross_out__2_;
+            this.CerrarCloseForm.Location = new System.Drawing.Point(0, 0);
+            this.CerrarCloseForm.Name = "CerrarCloseForm";
+            this.CerrarCloseForm.Size = new System.Drawing.Size(75, 80);
+            this.CerrarCloseForm.TabIndex = 1;
+            this.CerrarCloseForm.UseVisualStyleBackColor = true;
+            this.CerrarCloseForm.Click += new System.EventHandler(this.CerrarCloseForm_Click);
+            // 
             // Titulo
             // 
             this.Titulo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -204,36 +235,6 @@
             this.panelEscritorio.Size = new System.Drawing.Size(459, 383);
             this.panelEscritorio.TabIndex = 2;
             this.panelEscritorio.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEscritorio_Paint);
-            // 
-            // Login
-            // 
-            this.Login.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Login.FlatAppearance.BorderSize = 0;
-            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Login.Location = new System.Drawing.Point(0, 280);
-            this.Login.Name = "Login";
-            this.Login.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Login.Size = new System.Drawing.Size(220, 40);
-            this.Login.TabIndex = 6;
-            this.Login.Text = "Login";
-            this.Login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Login.UseVisualStyleBackColor = true;
-            this.Login.Click += new System.EventHandler(this.Login_Click);
-            // 
-            // CerrarCloseForm
-            // 
-            this.CerrarCloseForm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.CerrarCloseForm.FlatAppearance.BorderSize = 0;
-            this.CerrarCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CerrarCloseForm.Image = global::Win.SMF.Properties.Resources.cross_out__2_;
-            this.CerrarCloseForm.Location = new System.Drawing.Point(0, 0);
-            this.CerrarCloseForm.Name = "CerrarCloseForm";
-            this.CerrarCloseForm.Size = new System.Drawing.Size(75, 80);
-            this.CerrarCloseForm.TabIndex = 1;
-            this.CerrarCloseForm.UseVisualStyleBackColor = true;
-            this.CerrarCloseForm.Click += new System.EventHandler(this.CerrarCloseForm_Click);
             // 
             // FormMenu
             // 
