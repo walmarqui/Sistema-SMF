@@ -73,7 +73,7 @@
             // 
             // listaProductosBindingSource
             // 
-            this.listaProductosBindingSource.DataSource = typeof(BL.SMF.ProductosBL.Producto);
+            listaProductosBindingSource.DataSource = typeof(BL.SMF.ProductosBL.Producto);
             // 
             // listaProductosBindingNavigator
             // 
