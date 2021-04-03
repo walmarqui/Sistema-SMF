@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,16 @@ namespace BL.SMF
 {
     public class ProductosBL
     {
+        Contexto _contexto;
         public BindingList<Producto> ListaProductos { get; set; }
 
         public ProductosBL()
         {
+            _contexto = new Contexto();
             ListaProductos = new BindingList<Producto>();
+            //ya no se utiliza datos de prueba borrar
 
-            var producto1 = new Producto();
+           /* var producto1 = new Producto();
             producto1.Id = 1;
             producto1.Codigo = "001";
             producto1.Descripcion = "Tenis Nike";
@@ -24,11 +28,13 @@ namespace BL.SMF
             producto1.Existencia = 10;
             producto1.Activo = true;
 
-            ListaProductos.Add(producto1);
+            ListaProductos.Add(producto1);*/
         }
 
         public BindingList<Producto> ObtenerProductos()
         {
+            _contexto.Productos.Load();
+            ListaProductos = _contexto.Productos.Local.ToBindingList();
             return ListaProductos;
         }
 
