@@ -34,7 +34,7 @@ namespace BL.SMF
 
         public Resultado GuardarProducto(Producto producto)
         {
-            var resultado = validar(producto);
+            var resultado = Validar(producto);
             if(resultado.Exitoso == false)
             {
                 return resultado;
@@ -70,7 +70,7 @@ namespace BL.SMF
             return false;
         }
 
-        private Resultado validar(Producto producto)
+        private Resultado Validar(Producto producto)
         {
             var resultado = new Resultado();
             resultado.Exitoso = true;

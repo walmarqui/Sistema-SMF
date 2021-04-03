@@ -68,18 +68,18 @@ namespace Win.SMF
         {
            if (idTextBox.Text != "")
               {
-                var resultado = MessageBox.Show("desea aiminar este registro?", "eliminar", MessageBoxButtons.YesNo);
+                var resultado = MessageBox.Show("desea eliminar este registro?", "eliminar", MessageBoxButtons.YesNo);
                  if (resultado == DialogResult.Yes)
               {
 
                 var id = Convert.ToInt32(idTextBox.Text);
-                eliminar(id);
+                Eliminar(id);
               }
 
             }
         }
 
-        private void eliminar(int id)
+        private void Eliminar(int id)
         {
             
             var resultado = _productos.EliminarProducto(id);
@@ -99,6 +99,7 @@ namespace Win.SMF
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
             DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
     }
 }
