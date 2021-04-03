@@ -46,10 +46,7 @@ namespace BL.SMF
                 return resultado;
             }
 
-            if (producto.Id == 0)
-            {
-                producto.Id = ListaProductos.Max(item => item.Id) + 1;
-            }
+            _contexto.SaveChanges();
 
             resultado.Exitoso = true;
             return resultado;
@@ -68,6 +65,7 @@ namespace BL.SMF
                 if(producto.Id == id)
                 {
                     ListaProductos.Remove(producto);
+                    _contexto.SaveChanges();
                     return true;
                 }
 
@@ -118,6 +116,7 @@ namespace BL.SMF
             public string Categoria { get; set; }
             public double Precio { get; set; }
             public int Existencia { get; set; }
+            public byte[] Foto { get; set; }
             public bool Activo { get; set; }
         }
     

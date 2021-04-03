@@ -127,7 +127,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\BL.SMF.ProductosBL+Producto.datasource" />
     <None Include="Properties\DataSources\BL.SMF.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.SMF.SeguridadBL.datasource" />
     <None Include="Properties\Settings.settings">

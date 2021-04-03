@@ -35,6 +35,7 @@ namespace Win.SMF
             {
                 listaProductosBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto guardado con exito");
             }
 
             else

@@ -59,6 +59,8 @@
             this.existenciaTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.precioTextBox = new System.Windows.Forms.TextBox();
+            this.listaProductosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
             activoLabel = new System.Windows.Forms.Label();
             categoriaLabel = new System.Windows.Forms.Label();
             codigoLabel = new System.Windows.Forms.Label();
@@ -69,6 +71,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingNavigator)).BeginInit();
             this.listaProductosBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -136,7 +140,7 @@
             // 
             // listaProductosBindingSource
             // 
-            listaProductosBindingSource.DataSource = typeof(BL.SMF.ProductosBL.Productos);
+            this.listaProductosBindingSource.DataSource = typeof(BL.SMF.ProductosBL.Productos);
             // 
             // listaProductosBindingNavigator
             // 
@@ -333,11 +337,26 @@
             this.precioTextBox.Size = new System.Drawing.Size(220, 20);
             this.precioTextBox.TabIndex = 14;
             // 
+            // listaProductosBindingSource1
+            // 
+            this.listaProductosBindingSource1.DataSource = typeof(BL.SMF.Producto);
+            // 
+            // fotoPictureBox
+            // 
+            this.fotoPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaProductosBindingSource1, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.fotoPictureBox.Location = new System.Drawing.Point(572, 65);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(252, 239);
+            this.fotoPictureBox.TabIndex = 16;
+            this.fotoPictureBox.TabStop = false;
+            // 
             // FormProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 385);
+            this.Controls.Add(this.fotoPictureBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(categoriaLabel);
@@ -359,6 +378,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingNavigator)).EndInit();
             this.listaProductosBindingNavigator.ResumeLayout(false);
             this.listaProductosBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaProductosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +409,7 @@
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox precioTextBox;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
+        private System.Windows.Forms.BindingSource listaProductosBindingSource1;
+        private System.Windows.Forms.PictureBox fotoPictureBox;
     }
 }
