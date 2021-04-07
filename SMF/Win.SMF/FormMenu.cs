@@ -92,33 +92,33 @@ namespace Win.SMF
         private void Clientes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormClientes(), sender);
-            var formClientes = new FormClientes();
-            formClientes.MdiParent = this;
-            formClientes.Show();
+            //var formClientes = new FormClientes();
+            //formClientes.MdiParent = this;
+            //formClientes.Show();
         }
 
         private void Facturacion_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormFacturacion(), sender);
-            var formFacturacion = new FormFacturacion();
-            formFacturacion.MdiParent = this;
-            formFacturacion.Show();
+            //var formFacturacion = new FormFacturacion();
+            //formFacturacion.MdiParent = this;
+            //formFacturacion.Show();
         }
 
         private void Reportes_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormReportes(), sender);
-            var formReportes = new FormReportes();
-            formReportes.MdiParent = this;
-            formReportes.Show();
+            //var formReportes = new FormReportes();
+            //formReportes.MdiParent = this;
+            //formReportes.Show();
         }
 
         private void Configuracion_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormConfiguracion(), sender);
-            var formConfiguracion = new FormFacturacion();
-            formConfiguracion.MdiParent = this;
-            formConfiguracion.Show();
+            //var formConfiguracion = new FormFacturacion();
+            //formConfiguracion.MdiParent = this;
+            //formConfiguracion.Show();
         }
 
         private void Titulo_Click(object sender, EventArgs e)
