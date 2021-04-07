@@ -67,7 +67,7 @@ namespace Win.SMF
         {
             if (activeForm != null)
             {
-                activeForm.Show();
+                activeForm.Close();
             }
             ActivateButton(btnSender);
             activeForm = childForm;
@@ -84,9 +84,9 @@ namespace Win.SMF
         private void Productos_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormProductos(),sender);
-            var formProductos = new FormProductos();
-            formProductos.MdiParent = this;
-            formProductos.Show();
+            //var formProductos = new FormProductos();
+            //formProductos.MdiParent = this;
+            //formProductos.Show();
         }
 
         private void Clientes_Click(object sender, EventArgs e)

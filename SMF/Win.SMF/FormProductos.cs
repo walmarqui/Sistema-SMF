@@ -25,7 +25,7 @@ namespace Win.SMF
             listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
         }
 
-        private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        /*private void listaProductosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             listaProductosBindingSource.EndEdit();
             var producto = (Producto)listaProductosBindingSource.Current;
@@ -53,15 +53,15 @@ namespace Win.SMF
             {
                 MessageBox.Show(resultado.Mensaje);
             }
-        }
+        }*/
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+       /* private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             _productos.AgregarProducto();
             listaProductosBindingSource.MoveLast();
 
             DeshabilitarHabilitarBotones(false);
-        }
+        }*/
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -76,7 +76,7 @@ namespace Win.SMF
             toolStripButtonCancelar.Visible = !valor;
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+       /* private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
            if (idTextBox.Text != "")
               {
@@ -89,7 +89,7 @@ namespace Win.SMF
               }
 
             }
-        }
+        }*/
 
         private void Eliminar(int id)
         {
@@ -146,6 +146,59 @@ namespace Win.SMF
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void listaProductosBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            listaProductosBindingSource.EndEdit();
+            var producto = (Producto)listaProductosBindingSource.Current;
+
+            if (fotoPictureBox.Image != null)
+            {
+                producto.Foto = Program.imageToByteArray(fotoPictureBox.Image);
+            }
+
+            else
+            {
+                producto.Foto = null;
+            }
+
+            var resultado = _productos.GuardarProducto(producto);
+
+            if (resultado.Exitoso == true)
+            {
+                listaProductosBindingSource.ResetBindings(false);
+                DeshabilitarHabilitarBotones(true);
+                MessageBox.Show("Producto guardado con exito");
+            }
+
+            else
+            {
+                MessageBox.Show(resultado.Mensaje);
+            }
+        }
+
+        private void bindingNavigatorAddNewItem_Click_1(object sender, EventArgs e)
+        {
+            _productos.AgregarProducto();
+            listaProductosBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
+        }
+
+        private void bindingNavigatorDeleteItem_Click_1(object sender, EventArgs e)
+        {
+            if (idTextBox.Text != "")
+            {
+                var resultado = MessageBox.Show("desea eliminar este registro?", "eliminar", MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+
+                    var id = Convert.ToInt32(idTextBox.Text);
+                    Eliminar(id);
+                }
+
+            }
         }
     }
 }
