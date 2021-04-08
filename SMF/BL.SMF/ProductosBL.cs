@@ -17,18 +17,6 @@ namespace BL.SMF
         {
             _contexto = new Contexto();
             ListaProductos = new BindingList<Producto>();
-            //ya no se utiliza datos de prueba borrar
-
-           /* var producto1 = new Producto();
-            producto1.Id = 1;
-            producto1.Codigo = "001";
-            producto1.Descripcion = "Tenis Nike";
-            producto1.Categoria = "Deportivo";
-            producto1.Precio = 2500;
-            producto1.Existencia = 10;
-            producto1.Activo = true;
-
-            ListaProductos.Add(producto1);*/
         }
 
         public BindingList<Producto> ObtenerProductos()
@@ -114,6 +102,8 @@ namespace BL.SMF
             public string Codigo { get; set; }
             public string Descripcion { get; set; }
             public string Categoria { get; set; }
+            public int TipoId { get; set; }
+            public Tipo Tipo { get; set; }
             public double Precio { get; set; }
             public int Existencia { get; set; }
             public byte[] Foto { get; set; }

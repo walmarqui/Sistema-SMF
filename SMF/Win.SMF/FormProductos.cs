@@ -108,15 +108,16 @@ namespace Win.SMF
             }
         }
 
-        private void toolStripButtonCancelar_Click(object sender, EventArgs e)
+        /*private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
             DeshabilitarHabilitarBotones(true);
             Eliminar(0);
-        }
+        }*/
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             var producto = (Producto)listaProductosBindingSource.Current;
+
             if (producto != null)
             {
                 openFileDialog1.ShowDialog();
@@ -199,6 +200,12 @@ namespace Win.SMF
                 }
 
             }
+        }
+
+        private void toolStripButtonCancelar_Click_1(object sender, EventArgs e)
+        {
+            DeshabilitarHabilitarBotones(true);
+            Eliminar(0);
         }
     }
 }

@@ -147,7 +147,7 @@
             this.button1.TabIndex = 17;
             this.button1.Text = "Agregar Foto";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
@@ -304,6 +304,7 @@
             this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
+            this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click_1);
             // 
             // activoCheckBox
             // 

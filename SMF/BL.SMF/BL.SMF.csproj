@@ -53,6 +53,7 @@
     <Compile Include="ProductosBL.cs" />
     <Compile Include="SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiposBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
