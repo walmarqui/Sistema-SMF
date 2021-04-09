@@ -101,7 +101,8 @@ namespace BL.SMF
             public int Id { get; set; }
             public string Codigo { get; set; }
             public string Descripcion { get; set; }
-            public string Categoria { get; set; }
+            public string CategoriaId { get; set; }
+            public Categoria Categoria { get; set; }
             public int TipoId { get; set; }
             public Tipo Tipo { get; set; }
             public double Precio { get; set; }
