@@ -26,6 +26,14 @@ namespace BL.SMF
             return ListaProductos;
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
         public Resultado GuardarProducto(Producto producto)
         {
             var resultado = Validar(producto);
@@ -87,6 +95,18 @@ namespace BL.SMF
                 resultado.Exitoso = false;
             }
 
+            if (producto.CategoriaId == 0)
+            {
+                resultado.Mensaje = "Seleccione una Categoria";
+                resultado.Exitoso = false;
+            }
+
+            if (producto.TipoId == 0)
+            {
+                resultado.Mensaje = "Seleccione un Tipo";
+                resultado.Exitoso = false;
+            }
+
             return resultado;
        
         }
@@ -101,7 +121,7 @@ namespace BL.SMF
             public int Id { get; set; }
             public string Codigo { get; set; }
             public string Descripcion { get; set; }
-            public string CategoriaId { get; set; }
+            public int CategoriaId { get; set; }
             public Categoria Categoria { get; set; }
             public int TipoId { get; set; }
             public Tipo Tipo { get; set; }

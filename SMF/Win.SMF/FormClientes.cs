@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.SMF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace Win.SMF
 {
     public partial class FormClientes : Form
     {
+        ClientesBL _clientes;
+
         public FormClientes()
         {
             InitializeComponent();
+
+            _clientes = new ClientesBL();
+            listaClientesBindingSource.DataSource = _clientes.ObtenerClientes();
         }
     }
 }
