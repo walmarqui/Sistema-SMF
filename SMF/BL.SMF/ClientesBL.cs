@@ -26,6 +26,84 @@ namespace BL.SMF
 
             return ListaClientes;
         }
+
+        public Resultado GuardarCliente(Cliente cliente)
+        {
+            var resultado = Validar(cliente);
+            if (resultado.Exitoso == false)
+            {
+                return resultado;
+            }
+
+            _contexto.SaveChanges();
+
+            resultado.Exitoso = true;
+            return resultado;
+        }
+
+        public void AgregarCliente()
+        {
+            var nuevoCliente = new Cliente();
+
+            ListaClientes.Add(nuevoCliente);
+        }
+        public bool EliminarCliente(int id)
+        {
+            foreach (var cliente in ListaClientes)
+            {
+                if (cliente.Id == id)
+                {
+                    ListaClientes.Remove(cliente);
+                    _contexto.SaveChanges();
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+
+        private Resultado Validar(Cliente cliente)
+        {
+            var resultado = new Resultado();
+            resultado.Exitoso = true;
+
+            if (string.IsNullOrEmpty(cliente.NombreCompleto) == true)
+            {
+                resultado.Mensaje = "Ingrese un nombre de cliente";
+                resultado.Exitoso = false;
+            }
+
+
+            if (string.IsNullOrEmpty(cliente.Direccion) == true)
+            {
+                resultado.Mensaje = "Asigne una direccion";
+                resultado.Exitoso = false;
+            }
+
+
+            if (string.IsNullOrEmpty(cliente.Telefono) == true)
+            {
+                resultado.Mensaje = "Ingrese un numero telefonico";
+                resultado.Exitoso = false;
+            }
+
+            if (cliente.Identidad == 0)
+            {
+                resultado.Mensaje = "Ingrese un numero de ID valido";
+                resultado.Exitoso = false;
+            }
+
+            /*if (cliente.Rtn == 0)
+            {
+                resultado.Mensaje = "ingrese el rtn";
+                resultado.Exitoso = false;
+            }*/
+
+            return resultado;
+
+        }
+
     }
 
     public class Cliente
@@ -41,4 +119,5 @@ namespace BL.SMF
         public byte Foto { get; set; }
         public bool Activo { get; set; }
     }
+
 }

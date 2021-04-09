@@ -39,7 +39,6 @@
             System.Windows.Forms.Label nombreCompletoLabel;
             System.Windows.Forms.Label rtnLabel;
             System.Windows.Forms.Label telefonoLabel;
-            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaClientesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -63,6 +62,8 @@
             this.rtnTextBox = new System.Windows.Forms.TextBox();
             this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
+            this.listaClientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             activoLabel = new System.Windows.Forms.Label();
             codigoLabel = new System.Windows.Forms.Label();
             correoElectronicoLabel = new System.Windows.Forms.Label();
@@ -72,22 +73,18 @@
             nombreCompletoLabel = new System.Windows.Forms.Label();
             rtnLabel = new System.Windows.Forms.Label();
             telefonoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingNavigator)).BeginInit();
             this.listaClientesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listaClientesBindingSource
-            // 
-            this.listaClientesBindingSource.DataSource = typeof(BL.SMF.Cliente);
             // 
             // listaClientesBindingNavigator
             // 
-            this.listaClientesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.listaClientesBindingNavigator.AddNewItem = null;
             this.listaClientesBindingNavigator.BindingSource = this.listaClientesBindingSource;
             this.listaClientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.listaClientesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.listaClientesBindingNavigator.DeleteItem = null;
             this.listaClientesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -100,7 +97,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.listaClientesBindingNavigatorSaveItem});
+            this.listaClientesBindingNavigatorSaveItem,
+            this.toolStripButtonCancelar});
             this.listaClientesBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaClientesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaClientesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -187,6 +185,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -200,11 +199,11 @@
             // listaClientesBindingNavigatorSaveItem
             // 
             this.listaClientesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.listaClientesBindingNavigatorSaveItem.Enabled = false;
             this.listaClientesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaClientesBindingNavigatorSaveItem.Image")));
             this.listaClientesBindingNavigatorSaveItem.Name = "listaClientesBindingNavigatorSaveItem";
             this.listaClientesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.listaClientesBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.listaClientesBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaClientesBindingNavigatorSaveItem_Click);
             // 
             // activoLabel
             // 
@@ -369,6 +368,20 @@
             this.fotoPictureBox.TabIndex = 21;
             this.fotoPictureBox.TabStop = false;
             // 
+            // toolStripButtonCancelar
+            // 
+            this.toolStripButtonCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
+            this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 22);
+            this.toolStripButtonCancelar.Text = "Cancelar";
+            this.toolStripButtonCancelar.Visible = false;
+            // 
+            // listaClientesBindingSource
+            // 
+            this.listaClientesBindingSource.DataSource = typeof(BL.SMF.Cliente);
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,11 +409,11 @@
             this.Controls.Add(this.listaClientesBindingNavigator);
             this.Name = "FormClientes";
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingNavigator)).EndInit();
             this.listaClientesBindingNavigator.ResumeLayout(false);
             this.listaClientesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaClientesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,5 +445,6 @@
         private System.Windows.Forms.TextBox rtnTextBox;
         private System.Windows.Forms.TextBox telefonoTextBox;
         private System.Windows.Forms.PictureBox fotoPictureBox;
+        private System.Windows.Forms.ToolStripButton toolStripButtonCancelar;
     }
 }
