@@ -27,6 +27,15 @@ namespace BL.SMF
             return ListaClientes;
         }
 
+        public void CancelarCambios()
+        {
+            foreach (var item in _contexto.ChangeTracker.Entries())
+            {
+                item.State = EntityState.Unchanged;
+                item.Reload();
+            }
+        }
+
         public Resultado GuardarCliente(Cliente cliente)
         {
             var resultado = Validar(cliente);
@@ -88,17 +97,17 @@ namespace BL.SMF
                 resultado.Exitoso = false;
             }
 
-            if (cliente.Identidad == 0)
+            if (cliente.Identidad == "")
             {
                 resultado.Mensaje = "Ingrese un numero de ID valido";
                 resultado.Exitoso = false;
             }
 
-            /*if (cliente.Rtn == 0)
+            if (cliente.Rtn == "")
             {
                 resultado.Mensaje = "ingrese el rtn";
                 resultado.Exitoso = false;
-            }*/
+            }
 
             return resultado;
 
@@ -110,13 +119,15 @@ namespace BL.SMF
     {
         public int Id { get; set; }
         public string Codigo { get; set; }
-        public int Identidad { get; set; }
+        public int TClienteId { get; set; }
+        public TCliente TCliente { get; set; }
+        public string Identidad { get; set; }
         public string NombreCompleto { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
         public string CorreoElectronico { get; set; }
-        public int Rtn { get; set; }
-        public byte Foto { get; set; }
+        public string Rtn { get; set; }
+        public byte[] Foto { get; set; }
         public bool Activo { get; set; }
     }
 

@@ -50,6 +50,10 @@ namespace Win.SMF
             usuario = Usuario.Text;
             contrasena = Contraseña.Text;
 
+            Aceptar.Enabled = false;
+            Aceptar.Text = "Verificando...";
+            Application.DoEvents();
+
             var resultado = _seguridad.Autorizar(usuario, contrasena);
 
             if (resultado == true)
@@ -62,6 +66,8 @@ namespace Win.SMF
             {
                 MessageBox.Show("Usuario o Contraseña inconrrecta");
             }
+            Aceptar.Enabled = true;
+            Aceptar.Text = "Aceptar";
 
         }
 

@@ -11,11 +11,11 @@ namespace BL.SMF
     {
         protected override void Seed(Contexto contexto)
         {
-            /* var usuarioAdmin = new Usuario();
+             var usuarioAdmin = new Usuario();
              usuarioAdmin.Nombre = "admin";
              usuarioAdmin.Contrasena = "123";
 
-             contexto.Usuarios.Add(usuarioAdmin);*/
+             contexto.Usuarios.Add(usuarioAdmin);
 
             var categoria1 = new Categoria();
             categoria1.Descripcion = "Deportes";
@@ -32,6 +32,14 @@ namespace BL.SMF
             var tipo2 = new Tipo();
             tipo2.Descripcion = "Ropa";
             contexto.Tipos.Add(tipo2);
+
+            var tipoCliente1 = new TCliente();
+            tipoCliente1.Condicion = "Contado";
+            contexto.TClientes.Add(tipoCliente1);
+
+            var tipoCliente2 = new TCliente();
+            tipoCliente2.Condicion = "Credito";
+            contexto.TClientes.Add(tipoCliente2);
 
             base.Seed(contexto); 
         }
