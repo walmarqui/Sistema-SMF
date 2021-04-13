@@ -23,6 +23,6 @@ namespace BL.SMF
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<TCliente> TClientes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet Factura { get; set; }
+        public DbSet<Factura> Factura { get; set; }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BL.SMF
 {
@@ -19,11 +15,10 @@ namespace BL.SMF
 
         }
 
-        public BindingList<Factura> ObtenerFactura()
+        public BindingList<Factura> ObtenerFacturas()
         {
             _contexto.Factura.Include("FacturaDetalle").Load();
             ListaFactura = _contexto.Factura.Local.ToBindingList();
-
 
             return ListaFactura;
         }
