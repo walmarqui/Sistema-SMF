@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Remoting.Contexts;
 
 namespace BL.SMF
 {
     public class Contexto: DbContext
     {
+       
         public Contexto():base("Productos")
         {
-
+            
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -26,5 +23,6 @@ namespace BL.SMF
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<TCliente> TClientes { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet Factura { get; set; }
     }
 }

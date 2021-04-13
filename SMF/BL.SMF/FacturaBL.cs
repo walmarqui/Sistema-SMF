@@ -21,8 +21,9 @@ namespace BL.SMF
 
         public BindingList<Factura> ObtenerFactura()
         {
-            _contexto.Factura.Include("FacturaDetalle");
+            _contexto.Factura.Include("FacturaDetalle").Load();
             ListaFactura = _contexto.Factura.Local.ToBindingList();
+
 
             return ListaFactura;
         }
