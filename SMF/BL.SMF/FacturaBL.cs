@@ -99,7 +99,49 @@ namespace BL.SMF
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+
+            if (factura == null)
+            {
+                resultado.Mensaje = "Agregue una factura para poderla salvar";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
+            if (factura.Activo == false)
+            {
+                resultado.Mensaje = "La factura esta anulada y no se pueden realizar cambios en ella";
+                resultado.Exitoso = false;
+            }
+
+
+            if (factura.ClienteId == 0)
+            {
+                resultado.Mensaje = "Seleccione un cliente";
+                resultado.Exitoso = false;
+            }
+
+
+            if (factura.FacturaDetalle.Count == 0)
+            {
+                resultado.Mensaje = "Agregue productos a la factura";
+                resultado.Exitoso = false;
+            }
+
+            foreach (var detalle in factura.FacturaDetalle)
+            {
+                if (detalle.ProductoId == 0)
+                {
+                    resultado.Mensaje = "Seleccione productos validos";
+                    resultado.Exitoso = false;
+                }
+            }
+
+
             return resultado;
+
+
+
         }
 
         public void Calcularfactura(Factura factura)

@@ -77,6 +77,15 @@ namespace BL.SMF
             var resultado = new Resultado();
             resultado.Exitoso = true;
 
+
+            if (cliente == null)
+            {
+                resultado.Mensaje = "Agregue un producto valido";
+                resultado.Exitoso = false;
+
+                return resultado;
+            }
+
             if (string.IsNullOrEmpty(cliente.NombreCompleto) == true)
             {
                 resultado.Mensaje = "Ingrese un nombre de cliente";
