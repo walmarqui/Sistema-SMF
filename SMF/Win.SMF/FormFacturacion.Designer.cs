@@ -150,7 +150,7 @@
             // 
             // listaFacturaBindingSource
             // 
-            this.listaFacturaBindingSource.DataSource = typeof(BL.SMF.Factura);
+            listaFacturaBindingSource.DataSource = typeof(BL.SMF.Factura);
             // 
             // listaFacturaBindingNavigator
             // 

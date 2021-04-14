@@ -101,6 +101,52 @@ namespace BL.SMF
 
             return resultado;
         }
+
+        public void Calcularfactura(Factura factura)
+        {
+            if (factura != null)
+            {
+                double subtotal = 0;
+
+                foreach (var detalle in factura.FacturaDetalle)
+                {
+                    var producto = _contexto.Productos.Find(detalle.ProductoId);
+                    if (producto != null)
+                    {
+                        detalle.Precio = producto.Precio;
+                        detalle.Total = detalle.Cantidad * producto.Precio;
+
+                        subtotal += detalle.Total;
+                    }
+                }
+
+                factura.Subtotal = subtotal;
+                factura.Impuesto = subtotal * 0.15;
+                factura.Total = subtotal + factura.Impuesto;
+            }
+        }
+
+        public bool AnularFactura(int id)
+        {
+            foreach (var factura in ListaFactura)
+            {
+                if (factura.Id == id)
+                {
+                    factura.Activo = false;
+
+                    CalcularExistencia(factura);
+
+                    _contexto.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void CalcularExistencia(Factura factura)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Factura
@@ -114,6 +160,7 @@ namespace BL.SMF
         public double Impuesto { get; set; }
         public double Total { get; set; }
         public bool Activo { get; set; }
+        public int Id { get; internal set; }
 
         public Factura()
         {
