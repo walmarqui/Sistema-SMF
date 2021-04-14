@@ -30,6 +30,47 @@ namespace BL.SMF
             ListaFactura.Add(nuevaFactura);
         }
 
+        public void AgregarFacturaDetalle(Factura factura)
+        {
+            if (factura != null)
+            {
+                var nuevoDetalle = new FacturaDetalle();
+                factura.FacturaDetalle.Add(nuevoDetalle);
+            }
+        }
+
+        public void RemoverFacturaDetalle(Factura factura, FacturaDetalle facturaDetalle)
+        {
+            if (factura != null && facturaDetalle != null)
+            {
+                factura.FacturaDetalle.Remove(facturaDetalle);
+            }
+        }
+
+        public void CalcularFactura(Factura factura)
+        {
+            if (factura != null)
+            {
+                double subtotal = 0;
+
+                foreach (var detalle in factura.FacturaDetalle)
+                {
+                    var producto = _contexto.Productos.Find(detalle.ProductoId);
+                    if (producto != null)
+                    {
+                        detalle.Precio = producto.Precio;
+                        detalle.Total = detalle.Cantidad * producto.Precio;
+
+                        subtotal += detalle.Total;
+                    }
+                }
+
+                factura.Subtotal = subtotal;
+                factura.Impuesto = subtotal * 0.15;
+                factura.Total = subtotal + factura.Impuesto;
+            }
+        }
+
         public void CancelarCambios()
         {
             foreach (var item in _contexto.ChangeTracker.Entries())
@@ -39,7 +80,7 @@ namespace BL.SMF
             }
         }
 
-        public Resultado GuardarCliente(Factura Factura)
+        public Resultado GuardarFactura(Factura Factura)
         {
             var resultado = Validar(Factura);
             if (resultado.Exitoso == false)

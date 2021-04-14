@@ -113,6 +113,9 @@
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFacturacion.resx">
+      <DependentUpon>FormFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +138,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.SMF.CategoriasBL.datasource" />
     <None Include="Properties\DataSources\BL.SMF.ClientesBL.datasource" />
+    <None Include="Properties\DataSources\BL.SMF.FacturaBL.datasource" />
     <None Include="Properties\DataSources\BL.SMF.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.SMF.SeguridadBL.datasource" />
     <None Include="Properties\DataSources\BL.SMF.TClientesBL.datasource" />
