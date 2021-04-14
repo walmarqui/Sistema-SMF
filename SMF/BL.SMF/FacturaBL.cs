@@ -7,6 +7,8 @@ namespace BL.SMF
     public class FacturaBL
     {
         Contexto _contexto;
+        
+
         public BindingList<Factura> ListaFactura { get; set; }
 
         public FacturaBL()
@@ -88,11 +90,39 @@ namespace BL.SMF
                 return resultado;
             }
 
-            _contexto.SaveChanges();
 
+            CalcularExistencia(Factura);
+
+            _contexto.SaveChanges();
             resultado.Exitoso = true;
             return resultado;
+
         }
+
+        private void CalcularExistencia(object factura)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CalcularExistencia(Factura factura)
+        {
+            foreach (var detalle in factura.FacturaDetalle)
+            {
+                var producto = _contexto.Productos.Find(detalle.ProductoId);
+                if (producto != null)
+                {
+                    if (factura.Activo == true)
+                    {
+                        producto.Existencia = producto.Existencia - detalle.Cantidad;
+                    }
+                    else
+                    {
+                        producto.Existencia = producto.Existencia + detalle.Cantidad;
+                    }
+                }
+            }
+
+       }
 
         private Resultado Validar(Factura factura)
         {
@@ -106,6 +136,13 @@ namespace BL.SMF
                 resultado.Exitoso = false;
 
                 return resultado;
+            }
+
+
+            if (factura.Id != 0 && factura.Activo == true)
+            {
+                resultado.Mensaje = "La factura ya fue emitida y no se pueden realizar cambios en ella";
+                resultado.Exitoso = false;
             }
 
             if (factura.Activo == false)
@@ -184,15 +221,12 @@ namespace BL.SMF
             }
             return false;
         }
-
-        private void CalcularExistencia(Factura factura)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     public class Factura
     {
+        public readonly int Id;
+
         public int id { get; set; }
         public DateTime Fecha { get; set; }
         public int ClienteId { get; set; }
@@ -202,7 +236,7 @@ namespace BL.SMF
         public double Impuesto { get; set; }
         public double Total { get; set; }
         public bool Activo { get; set; }
-        public int Id { get; internal set; }
+        
 
         public Factura()
         {

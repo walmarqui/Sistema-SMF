@@ -16,7 +16,6 @@ namespace Win.SMF
         FacturaBL _facturaBL;
         ClientesBL _clientesBL;
         ProductosBL _productosBL;
-        private object listaFacturasBindingSource;
 
         public FormFacturacion()
         {
