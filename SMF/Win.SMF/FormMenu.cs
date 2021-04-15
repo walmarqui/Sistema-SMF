@@ -107,7 +107,7 @@ namespace Win.SMF
 
         private void Reportes_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormReportes(), sender);
+            OpenChildForm(new FormReporteProducto(), sender);
             //var formReportes = new FormReportes();
             //formReportes.MdiParent = this;
             //formReportes.Show();
