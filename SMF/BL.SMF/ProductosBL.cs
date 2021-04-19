@@ -125,8 +125,8 @@ namespace BL.SMF
         }
     }
 
-    public  class Producto
-        {
+         public  class Producto
+         {
             public int Id { get; set; }
             public string Codigo { get; set; }
             public string Descripcion { get; set; }
@@ -138,6 +138,11 @@ namespace BL.SMF
             public int Existencia { get; set; }
             public byte[] Foto { get; set; }
             public bool Activo { get; set; }
+
+            public Producto()
+            {
+                Activo = true;
+            }
         }
     
         public class Resultado

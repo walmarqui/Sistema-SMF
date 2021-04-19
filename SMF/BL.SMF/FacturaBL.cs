@@ -99,10 +99,10 @@ namespace BL.SMF
 
         }
 
-        private void CalcularExistencia(object factura)
+       /* private void CalcularExistencia(object factura)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         private void CalcularExistencia(Factura factura)
         {
@@ -152,11 +152,11 @@ namespace BL.SMF
             }
 
 
-            if (factura.ClienteId == 0)
+           /* if (factura.ClienteId == 0)
             {
                 resultado.Mensaje = "Seleccione un cliente";
                 resultado.Exitoso = false;
-            }
+            }*/
 
 
             if (factura.FacturaDetalle.Count == 0)
@@ -181,7 +181,7 @@ namespace BL.SMF
 
         }
 
-        public void Calcularfactura(Factura factura)
+       /* public void Calcularfactura(Factura factura)
         {
             if (factura != null)
             {
@@ -203,7 +203,7 @@ namespace BL.SMF
                 factura.Impuesto = subtotal * 0.15;
                 factura.Total = subtotal + factura.Impuesto;
             }
-        }
+        }*/
 
         public bool AnularFactura(int id)
         {

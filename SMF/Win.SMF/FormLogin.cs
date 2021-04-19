@@ -22,21 +22,6 @@ namespace Win.SMF
             _seguridad = new SeguridadBL();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Cancelar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -71,14 +56,21 @@ namespace Win.SMF
 
         }
 
-        private void Usuario_TextChanged(object sender, EventArgs e)
+        private void Usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == Convert.ToChar(Keys.Enter)
+                && !string.IsNullOrEmpty(Usuario.Text))
+            {
+                Contraseña.Focus();
+            }
         }
 
-        private void Contraseña_TextChanged(object sender, EventArgs e)
+        private void Contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(Contraseña.Text))
+            {
+                Aceptar.PerformClick();
+            }
         }
     }
 }
