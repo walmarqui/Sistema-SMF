@@ -157,5 +157,15 @@ namespace Win.SMF
             _productos.CancelarCambios();
             DeshabilitarHabilitarBotones(true);
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                var buscar = textBox1.Text;
+
+              listaProductosBindingSource.DataSource = _productos.ObtenerProductos(buscar);
+            }
+        }
     }
 }
