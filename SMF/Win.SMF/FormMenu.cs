@@ -140,6 +140,8 @@ namespace Win.SMF
         {
             var formLogin = new FormLogin();
             formLogin.ShowDialog();
+
+            toolStripStatusLabel1.Text = "Usuario: " + Utils.NombreUsuario;
         }
 
         private void panelBarraTitulo_Paint(object sender, PaintEventArgs e)

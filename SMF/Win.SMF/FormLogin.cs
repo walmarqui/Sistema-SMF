@@ -39,10 +39,11 @@ namespace Win.SMF
             Aceptar.Text = "Verificando...";
             Application.DoEvents();
 
-            var resultado = _seguridad.Autorizar(usuario, contrasena);
+            var usuarioDB = _seguridad.Autorizar(usuario, contrasena);
 
-            if (resultado == true)
+            if (usuarioDB != null)
             {
+                Utils.NombreUsuario = usuarioDB.Nombre;
                 this.Close();
                 //var formMenu = new FormMenu();
                 //formMenu.ShowDialog();
@@ -58,18 +59,25 @@ namespace Win.SMF
 
         private void Usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter)
-                && !string.IsNullOrEmpty(Usuario.Text))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Contraseña.Focus();
+                if (Usuario.Text != "")
+                {
+                    Contraseña.Focus();
+                }
+                
             }
         }
 
         private void Contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter) && !string.IsNullOrEmpty(Contraseña.Text))
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Aceptar.PerformClick();
+                if (Contraseña.Text != "")
+                {
+                    Aceptar.PerformClick();
+                }
+                
             }
         }
     }

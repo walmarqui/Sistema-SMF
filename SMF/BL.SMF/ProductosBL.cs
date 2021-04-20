@@ -31,7 +31,7 @@ namespace BL.SMF
         { 
             var descripcion = buscar.ToLower().Trim();
 
-            var resultado = _contexto.Productos.Where(r => r.Descripcion.ToLower().Contains(descripcion)).ToList();
+            var resultado = _contexto.Productos.Where(producto => producto.Descripcion.ToLower().Contains(descripcion)).ToList();
 
             return resultado;
         }

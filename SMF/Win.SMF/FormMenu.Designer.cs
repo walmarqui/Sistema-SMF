@@ -41,9 +41,13 @@
             this.CerrarCloseForm = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
+            this.panelEscritorio.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -243,12 +247,29 @@
             // 
             // panelEscritorio
             // 
+            this.panelEscritorio.Controls.Add(this.statusStrip1);
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(220, 80);
             this.panelEscritorio.Name = "panelEscritorio";
             this.panelEscritorio.Size = new System.Drawing.Size(459, 383);
             this.panelEscritorio.TabIndex = 2;
             this.panelEscritorio.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEscritorio_Paint);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 361);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(459, 22);
+            this.statusStrip1.TabIndex = 0;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(53, 17);
+            this.toolStripStatusLabel1.Text = "Usuario: ";
             // 
             // FormMenu
             // 
@@ -268,6 +289,10 @@
             this.panelLogo.PerformLayout();
             this.panelBarraTitulo.ResumeLayout(false);
             this.panelBarraTitulo.PerformLayout();
+            this.panelEscritorio.ResumeLayout(false);
+            this.panelEscritorio.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -287,5 +312,7 @@
         private System.Windows.Forms.Panel panelEscritorio;
         private System.Windows.Forms.Button Login;
         private System.Windows.Forms.Button CerrarCloseForm;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
