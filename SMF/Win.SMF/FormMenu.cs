@@ -47,10 +47,11 @@ namespace Win.SMF
         }
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            Ingresar();
+            //Ingresar();
             //var formLogin = new FormLogin();
             //formLogin.ShowDialog();
         }
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -160,9 +161,15 @@ namespace Win.SMF
         private void Resetear()
         {
             DisableButton();
-            Titulo.Text = "HOME";
+            Titulo.Text = "INICIO";
             currentButton = null;
             CerrarCloseForm.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelHora.Text = DateTime.Now.ToString("hh:mm:ss");
+            labelFecha.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

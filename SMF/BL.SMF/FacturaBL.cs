@@ -29,7 +29,8 @@ namespace BL.SMF
         {
             var nuevaFactura = new Factura();
 
-            ListaFactura.Add(nuevaFactura);
+            _contexto.Factura.Add(nuevaFactura);
+            //ListaFactura.Add(nuevaFactura);
         }
 
         public void AgregarFacturaDetalle(Factura factura)
@@ -152,11 +153,11 @@ namespace BL.SMF
             }
 
 
-           /* if (factura.ClienteId == 0)
+           if (factura.ClienteId == 0)
             {
                 resultado.Mensaje = "Seleccione un cliente";
                 resultado.Exitoso = false;
-            }*/
+            }
 
 
             if (factura.FacturaDetalle.Count == 0)
@@ -180,30 +181,6 @@ namespace BL.SMF
 
 
         }
-
-       /* public void Calcularfactura(Factura factura)
-        {
-            if (factura != null)
-            {
-                double subtotal = 0;
-
-                foreach (var detalle in factura.FacturaDetalle)
-                {
-                    var producto = _contexto.Productos.Find(detalle.ProductoId);
-                    if (producto != null)
-                    {
-                        detalle.Precio = producto.Precio;
-                        detalle.Total = detalle.Cantidad * producto.Precio;
-
-                        subtotal += detalle.Total;
-                    }
-                }
-
-                factura.Subtotal = subtotal;
-                factura.Impuesto = subtotal * 0.15;
-                factura.Total = subtotal + factura.Impuesto;
-            }
-        }*/
 
         public bool AnularFactura(int id)
         {

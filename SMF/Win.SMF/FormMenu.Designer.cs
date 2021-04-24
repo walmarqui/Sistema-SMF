@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.Login = new System.Windows.Forms.Button();
             this.Configuracion = new System.Windows.Forms.Button();
             this.Reportes = new System.Windows.Forms.Button();
             this.Facturacion = new System.Windows.Forms.Button();
@@ -41,8 +41,11 @@
             this.CerrarCloseForm = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.panelEscritorio = new System.Windows.Forms.Panel();
+            this.labelFecha = new System.Windows.Forms.Label();
+            this.labelHora = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelBarraTitulo.SuspendLayout();
@@ -53,7 +56,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.Login);
             this.panelMenu.Controls.Add(this.Configuracion);
             this.panelMenu.Controls.Add(this.Reportes);
             this.panelMenu.Controls.Add(this.Facturacion);
@@ -66,24 +68,6 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 463);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // Login
-            // 
-            this.Login.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Login.FlatAppearance.BorderSize = 0;
-            this.Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Login.Location = new System.Drawing.Point(0, 330);
-            this.Login.Name = "Login";
-            this.Login.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.Login.Size = new System.Drawing.Size(220, 50);
-            this.Login.TabIndex = 6;
-            this.Login.Text = "Login";
-            this.Login.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Login.UseVisualStyleBackColor = true;
-            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // Configuracion
             // 
@@ -215,7 +199,7 @@
             this.panelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraTitulo.Location = new System.Drawing.Point(220, 0);
             this.panelBarraTitulo.Name = "panelBarraTitulo";
-            this.panelBarraTitulo.Size = new System.Drawing.Size(459, 80);
+            this.panelBarraTitulo.Size = new System.Drawing.Size(1038, 80);
             this.panelBarraTitulo.TabIndex = 1;
             this.panelBarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBarraTitulo_Paint);
             // 
@@ -238,22 +222,46 @@
             this.Titulo.AutoSize = true;
             this.Titulo.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Titulo.ForeColor = System.Drawing.Color.White;
-            this.Titulo.Location = new System.Drawing.Point(179, 30);
+            this.Titulo.Location = new System.Drawing.Point(469, 30);
             this.Titulo.Name = "Titulo";
-            this.Titulo.Size = new System.Drawing.Size(83, 27);
+            this.Titulo.Size = new System.Drawing.Size(85, 27);
             this.Titulo.TabIndex = 0;
-            this.Titulo.Text = "HOME";
+            this.Titulo.Text = "INICIO";
             this.Titulo.Click += new System.EventHandler(this.Titulo_Click);
             // 
             // panelEscritorio
             // 
+            this.panelEscritorio.Controls.Add(this.labelFecha);
+            this.panelEscritorio.Controls.Add(this.labelHora);
             this.panelEscritorio.Controls.Add(this.statusStrip1);
             this.panelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEscritorio.Location = new System.Drawing.Point(220, 80);
             this.panelEscritorio.Name = "panelEscritorio";
-            this.panelEscritorio.Size = new System.Drawing.Size(459, 383);
+            this.panelEscritorio.Size = new System.Drawing.Size(1038, 383);
             this.panelEscritorio.TabIndex = 2;
             this.panelEscritorio.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEscritorio_Paint);
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFecha.ForeColor = System.Drawing.Color.Teal;
+            this.labelFecha.Location = new System.Drawing.Point(415, 89);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(90, 31);
+            this.labelFecha.TabIndex = 2;
+            this.labelFecha.Text = "Fecha";
+            // 
+            // labelHora
+            // 
+            this.labelHora.AutoSize = true;
+            this.labelHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHora.ForeColor = System.Drawing.Color.Teal;
+            this.labelHora.Location = new System.Drawing.Point(477, 29);
+            this.labelHora.Name = "labelHora";
+            this.labelHora.Size = new System.Drawing.Size(107, 46);
+            this.labelHora.TabIndex = 1;
+            this.labelHora.Text = "Hora";
             // 
             // statusStrip1
             // 
@@ -261,7 +269,7 @@
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 361);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(459, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1038, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -271,11 +279,16 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(53, 17);
             this.toolStripStatusLabel1.Text = "Usuario: ";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 463);
+            this.ClientSize = new System.Drawing.Size(1258, 463);
             this.Controls.Add(this.panelEscritorio);
             this.Controls.Add(this.panelBarraTitulo);
             this.Controls.Add(this.panelMenu);
@@ -283,7 +296,6 @@
             this.Name = "FormMenu";
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -310,9 +322,11 @@
         private System.Windows.Forms.Panel panelBarraTitulo;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.Panel panelEscritorio;
-        private System.Windows.Forms.Button Login;
         private System.Windows.Forms.Button CerrarCloseForm;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Label labelHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

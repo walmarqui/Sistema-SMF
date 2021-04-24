@@ -80,7 +80,7 @@ namespace BL.SMF
 
             if (cliente == null)
             {
-                resultado.Mensaje = "Agregue un producto valido";
+                resultado.Mensaje = "Agregue un cliente valido";
                 resultado.Exitoso = false;
 
                 return resultado;

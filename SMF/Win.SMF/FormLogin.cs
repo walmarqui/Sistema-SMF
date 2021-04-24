@@ -44,9 +44,12 @@ namespace Win.SMF
             if (usuarioDB != null)
             {
                 Utils.NombreUsuario = usuarioDB.Nombre;
+                //var formLogin = new FormLogin();
+                //formLogin.Close();
+                //this.Close();
+                var formMenu = new FormMenu();
+                formMenu.ShowDialog();
                 this.Close();
-                //var formMenu = new FormMenu();
-                //formMenu.ShowDialog();
             }
             else
             {
@@ -80,5 +83,6 @@ namespace Win.SMF
                 
             }
         }
+
     }
 }

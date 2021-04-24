@@ -54,8 +54,9 @@ namespace Win.SMF
 
             if (resultado == true)
             {
+                textBox1.Text = "";
+                listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
                 listaProductosBindingSource.ResetBindings(false);
-
             }
             else
             {
@@ -131,6 +132,9 @@ namespace Win.SMF
 
         private void bindingNavigatorAddNewItem_Click_1(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            listaProductosBindingSource.DataSource = _productos.ObtenerProductos();
+
             _productos.AgregarProducto();
             listaProductosBindingSource.MoveLast();
 

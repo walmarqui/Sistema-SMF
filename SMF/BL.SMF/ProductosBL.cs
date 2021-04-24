@@ -19,12 +19,12 @@ namespace BL.SMF
             ListaProductos = new BindingList<Producto>();
         }
 
-        public IEnumerable<Producto> ObtenerProductos()
+        public BindingList<Producto> ObtenerProductos()
         {
             _contexto.Productos.Load();
             ListaProductos = _contexto.Productos.Local.ToBindingList();
 
-            return ListaProductos.OrderBy(producto => producto.Descripcion);
+            return ListaProductos;
         }
 
         public IEnumerable<Producto> ObtenerProductos(string buscar)

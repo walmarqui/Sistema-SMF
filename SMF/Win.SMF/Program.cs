@@ -18,7 +18,8 @@ namespace Win.SMF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            //Application.Run(new FormMenu());
+            Application.Run(new FormLogin());
         }
 
         public static byte[] imageToByteArray(Image imageIn)

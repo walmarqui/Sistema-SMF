@@ -51,7 +51,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            //this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label1
             // 
@@ -89,7 +88,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.Location = new System.Drawing.Point(31, 262);
+            this.panel4.Location = new System.Drawing.Point(29, 262);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(233, 1);
             this.panel4.TabIndex = 5;
@@ -123,7 +122,6 @@
             this.Contraseña.PasswordChar = '*';
             this.Contraseña.Size = new System.Drawing.Size(173, 20);
             this.Contraseña.TabIndex = 9;
-            //this.Contraseña.TextChanged += new System.EventHandler(this.Contraseña_TextChanged);
             this.Contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Contraseña_KeyPress);
             // 
             // Aceptar
@@ -156,7 +154,6 @@
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(173, 20);
             this.Usuario.TabIndex = 1;
-            //this.Usuario.TextChanged += new System.EventHandler(this.Usuario_TextChanged);
             this.Usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Usuario_KeyPress);
             // 
             // FormLogin
@@ -184,7 +181,6 @@
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesion";
-            // this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
