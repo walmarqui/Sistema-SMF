@@ -72,7 +72,6 @@ namespace Win.SMF
             if (producto != null)
             {
                 openFileDialog1.ShowDialog();
-
                 var archivo = openFileDialog1.FileName;
 
                 if (archivo != "")
