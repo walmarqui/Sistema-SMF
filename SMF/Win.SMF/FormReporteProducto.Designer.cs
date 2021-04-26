@@ -1,4 +1,6 @@
-﻿namespace Win.SMF
+﻿using System;
+
+namespace Win.SMF
 {
     partial class FormReporteProducto
     {
@@ -43,6 +45,7 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(686, 337);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load_1);
             // 
             // FormReporteProducto
             // 
@@ -52,10 +55,16 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "FormReporteProducto";
             this.Text = "Reportes de Producto";
-            this.Load += new System.EventHandler(this.FormReporteProducto_Load);
             this.ResumeLayout(false);
 
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+
 
         #endregion
 

@@ -72,6 +72,7 @@ namespace Win.SMF
             if (producto != null)
             {
                 openFileDialog1.ShowDialog();
+
                 var archivo = openFileDialog1.FileName;
 
                 if (archivo != "")
@@ -170,6 +171,16 @@ namespace Win.SMF
 
               listaProductosBindingSource.DataSource = _productos.ObtenerProductos(buscar);
             }
+        }
+
+        private void fotoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

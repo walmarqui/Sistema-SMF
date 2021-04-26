@@ -29,7 +29,7 @@ namespace Win.SMF
 
         }
 
-        private void FormReporteProducto_Load(object sender, EventArgs e)
+        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
         {
 
         }

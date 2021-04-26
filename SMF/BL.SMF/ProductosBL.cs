@@ -129,10 +129,6 @@ namespace BL.SMF
             return resultado;
        
         }
-
-        public class Productos
-        {
-        }
     }
 
          public  class Producto
