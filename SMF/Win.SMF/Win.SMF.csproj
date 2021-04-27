@@ -164,6 +164,9 @@
     <EmbeddedResource Include="FormReporteProducto.resx">
       <DependentUpon>FormReporteProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

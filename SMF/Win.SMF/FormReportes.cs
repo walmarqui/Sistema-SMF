@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BL.SMF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,18 @@ namespace Win.SMF
         public FormReportes()
         {
             InitializeComponent();
+
+            var _productosBL = new ProductosBL();
+
+            var bindingSource = new BindingSource();
+            bindingSource.DataSource = _productosBL.ObtenerProductos();
+
+            var reporte = new ReporteProducto();
+            reporte.SetDataSource(bindingSource);
+
+            crystalReportViewer1.ReportSource = reporte;
+            crystalReportViewer1.RefreshReport();
+
         }
     }
 }
